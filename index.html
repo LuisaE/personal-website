@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Luisa Escosteguy</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/resume.css" rel="stylesheet">
+  <script type="text/javascript" src="js/canvasapp.js"></script>
+  <style>
+            canvas{
+                display: block;
+                margin: 0 auto;
+            }
+            @font-face{
+                font-family: 'harry';
+                src: url('font/harry.ttf');
+            }
+   </style>
+</head>
+
+<body id="page-top">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+    <a class="navbar-brand js-scroll-trigger" href="#page-top">
+      <span class="d-block d-lg-none">Luisa Escosteguy</span>
+      <span class="d-none d-lg-block">
+        <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/profile.jpg" alt="">
+      </span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#about">About</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#work">Work Sample</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container-fluid p-0">
+
+    <section class="resume-section p-1 p-lg-5 d-flex align-items-center" id="about">
+      <div class="w-100">
+        <h1 class="mb-0">Luisa
+          <span class="text-primary">Escosteguy</span>
+        </h1>
+        <div class="subheading mb-5">(507)5817036 ·
+          <a href="mailto:luisaescosteguy@gmail.com">luisaescosteguy@gmail.com</a>
+        </div>
+        <p class="lead mb-5">Welcome to my website! My name is Luisa and I am an Informatics for Internet technician and Computer Science student at Carleton College. I will be working as an Explore Intern at Microsoft this summer. I have been coding for 4 years, with a focus on web development. Below you will see some projects I made for a class or just for fun.</p>
+        <a href="#work" class="btn btn-outline-info">See my work samples!</a>
+        <a href="https://www.linkedin.com/in/luisa-alves-escosteguy-b60551189/" class="btn btn-outline-info">Linkedin</a>
+      </div>
+    </section>
+    
+    <hr class="m-0">
+    
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="work">
+      <div class="w-100">
+        <h2 class="mb-5">Work sample</h2>
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between">
+          <div class="resume-content">
+            <h3 class="mb-0">Harry Potter Game</h3>
+            <p>Instructions: Move Harry (a,w,s,d) and get as many coins as possible, but do not get killed! </p>
+            <p>Project made using Canvas and Jquery. See the code in <a href="https://github.com/LuisaE/Game_HP/blob/master/canvasapp.js">GitHub</a>.</p>
+            <span style="font-family: 'harry';">&nbsp;</span><canvas id="canvas" width="500" height="300"></canvas><br>
+          </div>
+        </div>
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between">
+          <div class="resume-content">
+            <h3 class="mb-0">Carleton Developers Exchange <a href="https://carletondevx.github.io/devx/">Website</a></h3>
+            <p>Developed a website for Carleton Computer Science club to advertise events and recruit people to our mailing list. Check it here: <a href="https://carletondevx.github.io/devx/">DevX</a>.</p>
+          </div>
+        </div>
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between">
+          <div class="resume-content">
+              <h3 class="mb-0">Largest Product - <a href="https://projecteuler.net/problem=11">Project Euler</a></h3>
+              <p>Solved in Python using numpy for placement purpouses. See the code in <a href="https://github.com/LuisaE/Python/blob/master/problem11_ProjectEuler.py">GitHub</a>.</p>
+            <pre><code>
+import numpy as np
+import sys
+import urllib.request
+command_line_parameter = sys.argv[1]
+f = urllib.request.urlopen(command_line_parameter)
+tmp = [[int(num) for num in line.split()] for line in f]
+f.close()
+
+matrix = np.asarray(tmp) 
+m = matrix.shape[0] 
+n = matrix.shape[1] 
+val = []
+
+for i in range(m):
+    for j in range(n):
+        if i < m-3:
+            val.append(np.prod(matrix[i:i+4, j])) 
+        if j < n-3: 
+            val.append(np.prod(matrix[i, j:j+4]))
+        if i < m-3 and j < n-3: 
+            val.append(np.prod(matrix[i:i+4, j:j+4].diagonal()))  
+        if i > 2 and j < n-3:
+            new_array = np.diag(np.rot90(matrix[i-3:i+1, j:j+4])) 
+            val.append(np.prod(new_array))
+
+print(max(val))
+            </code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/resume.min.js"></script>
+
+</body>
+
+</html>
