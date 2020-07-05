@@ -94,36 +94,8 @@
         </div>
         <div class="resume-item d-flex flex-column flex-md-row justify-content-between">
           <div class="resume-content">
-              <h3 class="mb-0">Largest Product - <a href="https://projecteuler.net/problem=11">Project Euler</a></h3>
-              <p>Solved in Python using numpy for placement purpouses. See the code in <a href="https://github.com/LuisaE/Python/blob/master/problem11_ProjectEuler.py">GitHub</a>.</p>
-            <pre><code>
-import numpy as np
-import sys
-import urllib.request
-command_line_parameter = sys.argv[1]
-f = urllib.request.urlopen(command_line_parameter)
-tmp = [[int(num) for num in line.split()] for line in f]
-f.close()
-
-matrix = np.asarray(tmp) 
-m = matrix.shape[0] 
-n = matrix.shape[1] 
-val = []
-
-for i in range(m):
-    for j in range(n):
-        if i < m-3:
-            val.append(np.prod(matrix[i:i+4, j])) 
-        if j < n-3: 
-            val.append(np.prod(matrix[i, j:j+4]))
-        if i < m-3 and j < n-3: 
-            val.append(np.prod(matrix[i:i+4, j:j+4].diagonal()))  
-        if i > 2 and j < n-3:
-            new_array = np.diag(np.rot90(matrix[i-3:i+1, j:j+4])) 
-            val.append(np.prod(new_array))
-
-print(max(val))
-            </code></pre>
+              <h3 class="mb-0"><a href="http://maaspes.epizy.com">MASPES Art Museum Online Collection</a></h3>
+              <p>Gathered the requirements and de-signed the database. Developed the website back-end and the search engine. Created the admin system to manage the museum’scollection.</p>
           </div>
         </div>
       </div>
